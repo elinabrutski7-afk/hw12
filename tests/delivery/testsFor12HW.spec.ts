@@ -15,7 +15,7 @@ test.describe('GET positive tests', () => {
 
   test.beforeEach(async ({ request }) => {
     token = await fetchJwt(request, loginDto)
-    orderId = await createOrder(request, token)
+    orderId = await createOrder(request, token);
 
     const orderWithID = await request.get(baseUrl + ordersEndpoint + `/${orderId}`, {
       headers: {
