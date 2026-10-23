@@ -1,9 +1,15 @@
 import { expect, test } from '@playwright/test'
 import { Login } from '../../dto/login-dto'
-import { createOrder, fetchJwt, baseUrl, ordersEndpoint, loginEndpoint } from '../../helpers/api-helper'
+import {
+  createOrder,
+  fetchJwt,
+  baseUrl,
+  ordersEndpoint,
+  loginEndpoint,
+} from '../../helpers/api-helper'
 import { StatusCodes } from 'http-status-codes'
 
-let loginDto: Login;
+let loginDto: Login
 
 // unskip when ready to use
 test.describe('Authorization flow', () => {

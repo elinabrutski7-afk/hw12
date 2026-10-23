@@ -3,7 +3,7 @@ import { Login } from '../../dto/login-dto'
 import { createOrder, fetchJwt, baseUrl, ordersEndpoint } from '../../helpers/api-helper'
 import { StatusCodes } from 'http-status-codes'
 
-let loginDto: Login;
+let loginDto: Login
 
 test.describe('GET positive tests', () => {
   let orderId: number
@@ -15,7 +15,7 @@ test.describe('GET positive tests', () => {
 
   test.beforeEach(async ({ request }) => {
     token = await fetchJwt(request, loginDto)
-    orderId = await createOrder(request, token);
+    orderId = await createOrder(request, token)
 
     const orderWithID = await request.get(baseUrl + ordersEndpoint + `/${orderId}`, {
       headers: {
