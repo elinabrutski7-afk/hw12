@@ -1,8 +1,11 @@
 import { APIRequestContext } from 'playwright-core'
 import { Login } from '../dto/login-dto'
-import { baseUrl, loginEndpoint, ordersEndpoint } from '../tests/delivery/auth.spec'
 import { StatusCodes } from 'http-status-codes'
 import { expect } from '@playwright/test'
+
+export const baseUrl = 'https://backend.tallinn-learning.ee'
+export const loginEndpoint = '/login/student'
+export const ordersEndpoint = '/orders'
 
 export async function fetchJwt(request: APIRequestContext, login: Login): Promise<string> {
   const authResponse = await request.post(baseUrl + loginEndpoint, {
